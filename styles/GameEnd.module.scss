@@ -1,0 +1,370 @@
+@import "./variables.scss";
+
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  flex-grow: 1;
+  position: relative;
+  z-index: 0;
+}
+
+.picks {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.pickContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &:nth-child(2) div:first-child {
+    animation: fadeIn 2s ease 1;
+  }
+  & h3 {
+    color: $white-color;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    margin-bottom: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  50% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.pick {
+  border-radius: 50%;
+  width: 116px;
+  height: 116px;
+  position: relative;
+}
+
+.iconContainer {
+  background-color: $white-color;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  box-shadow: inset 0 5px $light-gray-color;
+  & div {
+    position: absolute;
+    left: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+.paper {
+  background: $paper-gradient;
+  box-shadow: 0 5px $paper-dark-color, 0px 7px 5px $shadow-color;
+  & .iconContainer div {
+    height: 48.16%;
+    width: 40%;
+    top: calc(25.92% + 2.5px);
+    left: 30%;
+  }
+}
+
+.scissors {
+  background: $scissors-gradient;
+  box-shadow: 0 5px $scissors-dark-color, 0px 7px 5px $shadow-color;
+  & .iconContainer div {
+    height: 45.5%;
+    width: 40%;
+    top: calc(27.25% + 2.5px);
+    left: 30%;
+  }
+}
+
+.rock {
+  background: $rock-gradient;
+  box-shadow: 0 5px $rock-dark-color, 0px 7px 5px $shadow-color;
+  & .iconContainer div {
+    width: 40%;
+    height: 40%;
+    top: calc(30% + 2.5px);
+    left: 30%;
+  }
+}
+
+.lizard {
+  background: $lizard-gradient;
+  box-shadow: 0 5px $lizard-dark-color, 0px 7px 5px $shadow-color;
+  & .iconContainer div {
+    width: 50%;
+    height: 47.61%;
+    top: calc(26.2% + 2.5px);
+    left: 25%;
+  }
+}
+
+.spock {
+  background: $spock-gradient;
+  box-shadow: 0 5px $spock-dark-color, 0px 7px 5px $shadow-color;
+  & .iconContainer div {
+    width: 36.73%;
+    height: 48.16%;
+    top: calc(25.92% + 2.5px);
+    left: 35%;
+  }
+}
+
+.bgCircle {
+  position: absolute;
+  background-color: $white-color;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: -1;
+  display: none;
+  &First {
+    width: 125%;
+    height: 125%;
+    left: -12.5%;
+    top: -12.5%;
+    animation: flash1 1.5s ease 2s infinite;
+  }
+  &Second {
+    width: 160%;
+    height: 160%;
+    left: -30%;
+    top: -30%;
+    animation: flash2 1.5s ease 2s infinite;
+  }
+  &Third {
+    width: 205%;
+    height: 205%;
+    left: -52.5%;
+    top: -52.5%;
+    animation: flash3 1.5s ease 2s infinite;
+  }
+  &Fourth {
+    width: 260%;
+    height: 260%;
+    left: -80%;
+    top: -80%;
+    animation: flash4 1.5s ease 2s infinite;
+  }
+}
+
+@keyframes flash1 {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.05;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes flash2 {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.05;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes flash3 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.05;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes flash4 {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.05;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.winningPick .bgCircle {
+  display: block;
+}
+
+.result {
+  animation: fadeIn 4s ease 1;
+  & h1 {
+    color: $white-color;
+    font-size: 4rem;
+    text-transform: uppercase;
+    margin: 0;
+    margin-bottom: 1rem;
+    animation: warp 1.5s ease-in-out 2s 1;
+  }
+}
+
+@keyframes warp {
+  15% {
+    transform: rotate(10deg) scale(1.5);
+    opacity: 1;
+  }
+  30% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  45% {
+    transform: rotate(-10deg) scale(1.5);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  80% {
+    transform: scale(2);
+    opacity: 1;
+  }
+}
+
+.button {
+  background-color: $white-color;
+  border: none;
+  text-transform: uppercase;
+  border-radius: 10px;
+  padding: 1rem;
+  font-size: 1rem;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  width: 100%;
+  color: $bg-color;
+  cursor: pointer;
+  box-shadow: 5px 5px 5px $shadow-color;
+  &:hover {
+    color: $green-color;
+    box-shadow: 0px 5px 5px $glow-color, 0px -5px 5px $glow-color, 5px 0px 5px $glow-color, -5px 0px 5px $glow-color;
+  }
+}
+
+/* BREAKPOINTS */
+
+@media only screen and (min-width: 576px) {
+  .pickContainer {
+    & h3 {
+      margin-top: 2rem;
+    }
+  }
+
+  .pick {
+    width: 174px;
+    height: 174px;
+  }
+
+  .iconContainer {
+    box-shadow: inset 0 8px $light-gray-color;
+  }
+
+  .paper {
+    box-shadow: 0 8px $paper-dark-color, 0px 9px 7px $shadow-color;
+    & .iconContainer div {
+      top: calc(25.92% + 4px);
+    }
+  }
+  
+  .scissors {
+    box-shadow: 0 8px $scissors-dark-color, 0px 9px 7px $shadow-color;
+    & .iconContainer div {
+      top: calc(27.25% + 4px);
+    }
+  }
+  
+  .rock {
+    box-shadow: 0 8px $rock-dark-color, 0px 9px 7px $shadow-color;
+    & .iconContainer div {
+      top: calc(30% + 4px);
+    }
+  }
+
+  .lizard {
+    box-shadow: 0 8px $lizard-dark-color, 0px 9px 7px $shadow-color;
+    & .iconContainer div {
+      top: calc(26.2% + 4px);
+    }
+  }
+
+  .spock {
+    box-shadow: 0 8px $spock-dark-color, 0px 9px 7px $shadow-color;
+    & .iconContainer div {
+      top: calc(25.92% + 4px);
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .picks {
+    justify-content: space-between;
+    width: 80%;
+  }
+
+  .pickContainer {
+    flex-direction: column-reverse;
+  }
+
+  .pick {
+    width: 250px;
+    height: 250px;
+  }
+
+  .pickContainer {
+    & h3 {
+      margin-top: 0;
+      margin-bottom: 3rem;
+    }
+  }
+
+  .result {
+    position: absolute;
+    top: 43%;
+  }
+}

@@ -1,0 +1,31 @@
+@import "./variables.scss";
+
+.rulesButton {
+  background-color: transparent;
+  border: 2px solid $gray-color;
+  border-radius: 10px;
+  text-transform: uppercase;
+  color: $white-color;
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-weight: 600;
+  // margin-bottom: 2rem;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px $shadow-color, inset 2px 2px 2px $shadow-color;
+}
+
+.rulesButton:hover {
+  color: $red-color;
+  border: 2px solid $rock-dark-color; 
+}
+
+/* BREAKPOINTS */
+
+// @media only screen and (min-width: 576px) {
+//   .rulesButton {
+//     align-self: flex-end;
+//     margin-right: 2rem;
+//   }
+// }

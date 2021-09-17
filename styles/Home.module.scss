@@ -1,0 +1,42 @@
+@import "./variables.scss";
+
+.container {
+  min-height: 568px;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  height: 100vh;
+  background: $bg-gradient;
+  min-width: 320px;
+  z-index: -2;
+  position: relative;
+  overflow: hidden;
+}
+
+.bottomRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+/* BREAKPOINTS */
+
+@media only screen and (min-width: 321px) {
+  .bottomRow {
+    margin-bottom: 2rem;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  .container {
+    min-height: 700px;
+  }
+
+  .bottomRow {
+    padding: 0 2rem;
+  }
+}

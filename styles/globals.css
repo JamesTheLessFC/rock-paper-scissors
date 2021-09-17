@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  position: relative;
+  z-index: -3;
 }
 
 a {
@@ -13,4 +16,9 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+#__next {
+  position: relative;
+  z-index: -3;
 }

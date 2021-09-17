@@ -1,0 +1,406 @@
+@import "./variables.scss";
+
+.root {
+  width: 160px;
+  height: 138.564px;
+  background-image: url("../public/images/bg-triangle.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  margin: auto;
+  z-index: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease;
+  &_ls {
+    background-image: url("../public/images/bg-pentagon.svg");
+    width: 190px;
+    height: 180px;
+  }
+  &_visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.button { 
+  position: absolute;
+  border-radius: 50%;
+  border: none;
+  width: 72.5%;
+  height: 83.7158%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  &_ls {
+    width: 45%;
+    height: 47.5%;
+  }
+  & div {
+    background-color: $white-color;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    box-shadow: inset 0 5px $light-gray-color;
+    pointer-events: none;
+  }
+  &_ls div {
+    box-shadow: inset 0 4px $light-gray-color;
+  }
+  & div div {
+    position: absolute;
+    left: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  &:active div {
+    box-shadow: none;
+  }
+}
+
+.paper {
+  top: 0;
+  left: 0;
+  background: $paper-gradient;
+  box-shadow: 0 5px $paper-dark-color, 0px 7px 5px $shadow-color;
+  &_ls {
+    top: 40.73%;
+    left: 100%;
+    box-shadow: 0 4px $paper-dark-color, 0px 6px 4px $shadow-color;
+  }
+  & div div {
+    height: 48.16%;
+    width: 40%;
+    top: calc(25.92% + 2.5px);
+  }
+  &_ls div div {
+    top: calc(25.92% + 2px);
+  }
+  &:hover {
+    background: $paper-dark-gradient;
+    box-shadow: 0 5px $paper-extra-dark-color, 0px 7px 5px $shadow-color;
+  }
+  &_ls:hover {
+    box-shadow: 0 4px $paper-extra-dark-color, 0px 6px 4px $shadow-color;
+  }
+  &:active {
+    box-shadow: 0px 2px 5px $shadow-color;
+    top: 5px;
+  }
+  &_ls:active {
+    box-shadow: 0px 2px 4px $shadow-color;
+    top: calc(40.73% + 4px);
+  }
+  &:active div div {
+    top: calc(25.92% - 2.5px);
+  }
+  &_ls:active div div {
+    top: calc(25.92% - 2.5px);
+  }
+}
+
+.scissors {
+  top: 0;
+  left: 100%;
+  background: $scissors-gradient;
+  box-shadow: 0 5px $scissors-dark-color, 0px 7px 5px $shadow-color;
+  &_ls {
+    top: 0;
+    left: 50%;
+    box-shadow: 0 4px $scissors-dark-color, 0px 6px 4px $shadow-color;
+  }
+  & div div {
+    height: 45.5%;
+    width: 40%;
+    top: calc(27.25% + 2.5px);
+  }
+  &_ls div div {
+    top: calc(27.25% + 2px);
+  }
+  &:hover {
+    background: $scissors-dark-gradient;
+    box-shadow: 0 5px $scissors-extra-dark-color, 0px 7px 5px $shadow-color;
+  }
+  &_ls:hover {
+    box-shadow: 0 4px $scissors-extra-dark-color, 0px 6px 4px $shadow-color;
+  }
+  &:active {
+    box-shadow: 0px 2px 5px $shadow-color;
+    top: 5px;
+  }
+  &_ls:active {
+    box-shadow: 0px 2px 4px $shadow-color;
+    top: 4px;
+  }
+  &:active div div {
+    top: calc(27.25% - 2.5px);
+  }
+  &_ls:active div div {
+    top: calc(27.25% - 2px);
+  }
+}
+
+.rock {
+  top: 100%;
+  left: 50%;
+  background: $rock-gradient;
+  box-shadow: 0 5px $rock-dark-color, 0px 7px 5px $shadow-color;
+  &_ls {
+    top: 100%;
+    left: 81.58%;
+    box-shadow: 0 4px $rock-dark-color, 0px 6px 4px $shadow-color;
+  }
+  & div div {
+    width: 40%;
+    height: 40%;
+    top: calc(30% + 2.5px);
+  }
+  &_ls div div {
+    top: calc(30% + 2px);
+  }
+  &:hover {
+    background: $rock-dark-gradient;
+    box-shadow: 0 5px $rock-extra-dark-color, 0px 7px 5px $shadow-color;
+  }
+  &_ls:hover {
+    box-shadow: 0 4px $rock-extra-dark-color, 0px 6px 4px $shadow-color;
+  }
+  &:active {
+    box-shadow: 0px 2px 5px $shadow-color;
+    top: calc(100% + 5px);
+  }
+  &_ls:active {
+    box-shadow: 0px 2px 4px $shadow-color;
+    top: calc(100% + 4px);
+  }
+  &:active div div {
+    top: calc(30% - 2.5px);
+  }
+  &_ls:active div div {
+    top: calc(30% - 2px);
+  }
+}
+
+.lizard {
+  top: 100%;
+  left: 18.42%;
+  background: $lizard-gradient;
+  box-shadow: 0 4px $lizard-dark-color, 0px 6px 4px $shadow-color;
+  & div div {
+    width: 50%;
+    height: 47.61%;
+    top: calc(26.2% + 2px);
+  }
+  &:hover {
+    background: $lizard-dark-gradient;
+    box-shadow: 0 4px $lizard-extra-dark-color, 0px 6px 4px $shadow-color;
+  }
+  &:active {
+    box-shadow: 0px 2px 4px $shadow-color;
+    top: calc(100% + 4px);
+  }
+  &:active div div {
+    top: calc(26.2% - 2px);
+  }
+}
+
+.spock {
+  top: 40.73%;
+  left: 0;
+  background: $spock-gradient;
+  box-shadow: 0 4px $spock-dark-color, 0px 6px 4px $shadow-color;
+  & div div {
+    width: 36.73%;
+    height: 48.16%;
+    top: calc(25.92% + 2px);
+    left: 4%;
+  }
+  &:hover {
+    background: $spock-dark-gradient;
+    box-shadow: 0 4px $spock-extra-dark-color, 0px 6px 4px $shadow-color;
+  }
+  &:active {
+    box-shadow: 0px 2px 4px $shadow-color;
+    top: calc(40.73% + 4px);
+  }
+  &:active div div {
+    top: calc(25.92% - 2px);
+  }
+}
+
+/* BREAKPOINTS */
+
+@media only screen and (min-width: 576px) {
+  .root {
+    width: 240px;
+    height: 207.8461px;
+    &_ls {
+      width: 285px;
+      height: 270px;
+    }
+  }
+
+  .button {
+    & div {
+      box-shadow: inset 0 8px $light-gray-color;
+    }
+    &_ls div {
+      box-shadow: inset 0 6px $light-gray-color;
+    }
+  }
+
+  .paper {
+    box-shadow: 0 8px $paper-dark-color, 0px 10px 7px $shadow-color;
+    &_ls {
+      box-shadow: 0 6px $paper-dark-color, 0px 8px 5px $shadow-color;
+    }
+    & div div {
+      top: calc(25.92% + 4px);
+    }
+    &_ls div div {
+      top: calc(25.92% + 3px);
+    }
+    &:hover {
+      box-shadow: 0 8px $paper-extra-dark-color, 0px 10px 7px $shadow-color;
+    }
+    &_ls:hover {
+      box-shadow: 0 6px $paper-extra-dark-color, 0px 8px 5px $shadow-color;
+    }
+    &:active {
+      box-shadow: 0px 2px 5px $shadow-color;
+      top: 8px;
+    }
+    &_ls:active {
+      top: 6px;
+    }
+    &_ls:active {
+      top: calc(40.73% + 6px);
+    }
+    &:active div div {
+      top: calc(25.92% - 4px);
+    }
+    &_ls:active div div {
+      top: calc(25.92% - 3px);
+    }
+  }
+
+  .scissors {
+    box-shadow: 0 8px $scissors-dark-color, 0px 10px 7px $shadow-color;
+    &_ls {
+      box-shadow: 0 6px $scissors-dark-color, 0px 8px 5px $shadow-color;
+    }
+    & div div {
+      top: calc(27.25% + 4px);
+    }
+    &_ls div div {
+      top: calc(27.25% + 3px);
+    }
+    &:hover {
+      box-shadow: 0 8px $scissors-extra-dark-color, 0px 10px 7px $shadow-color;
+    }
+    &_ls:hover {
+      box-shadow: 0 6px $scissors-extra-dark-color, 0px 8px 5px $shadow-color;
+    }
+    &:active {
+      box-shadow: 0px 2px 5px $shadow-color;
+      top: 8px;
+    }
+    &_ls:active {
+      top: 6px;
+    }
+    &:active div div {
+      top: calc(27.25% - 4px);
+    }
+    &_ls:active div div {
+      top: calc(27.25% - 3px);
+    }
+  }
+
+  .rock {
+    box-shadow: 0 8px $rock-dark-color, 0px 10px 7px $shadow-color;
+    &_ls {
+      box-shadow: 0 6px $rock-dark-color, 0px 8px 5px $shadow-color;
+    }
+    & div div {
+      top: calc(30% + 4px);
+    }
+    &_ls div div {
+      top: calc(30% + 3px);
+    }
+    &:hover {
+      box-shadow: 0 8px $rock-extra-dark-color, 0px 10px 7px $shadow-color;
+    }
+    &_ls:hover {
+      box-shadow: 0 6px $rock-extra-dark-color, 0px 8px 5px $shadow-color;
+    }
+    &:active {
+      box-shadow: 0px 2px 5px $shadow-color;
+      top: calc(100% + 8px);
+    }
+    &_ls:active {
+      top: calc(100% + 6px);
+    }
+    &:active div div {
+      top: calc(30% - 4px);
+    }
+    &_ls:active div div {
+      top: calc(30% - 3px);
+    }
+  }
+
+  .lizard {
+    box-shadow: 0 6px $lizard-dark-color, 0px 8px 5px $shadow-color;
+    & div div {
+      top: calc(26.2% + 3px);
+    }
+    &:hover {
+      box-shadow: 0 6px $lizard-extra-dark-color, 0px 8px 5px $shadow-color;
+    }
+    &:active {
+      box-shadow: 0px 2px 5px $shadow-color;
+      top: calc(100% + 6px);
+    }
+    &:active div div {
+      top: calc(26.2% - 3px);
+    }
+  }
+
+  .spock {
+    box-shadow: 0 6px $spock-dark-color, 0px 8px 6px $shadow-color;
+    & div div {
+      top: calc(25.92% + 3px);
+    }
+    &:hover {
+      box-shadow: 0 6px $spock-extra-dark-color, 0px 8px 5px $shadow-color;
+    }
+    &:active {
+      box-shadow: 0px 2px 5px $shadow-color;
+      top: calc(40.73% + 6px);
+    }
+    &:active div div {
+      top: calc(25.92% - 3px);
+    }
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  .root_ls {
+    width: 285px;
+    height: 270px;
+  }
+}

@@ -1,0 +1,144 @@
+@import "./variables.scss";
+
+.titleScoreBox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  border: 3px solid $gray-color;
+  border-radius: 5px;
+  min-width: 80%;
+  height: 6.75rem;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  background-color: transparent;
+  box-shadow: 2px 2px 2px $shadow-color, inset 2px 2px 2px $shadow-color;
+  overflow: hidden;
+}
+
+.title {
+  opacity: 0;
+  & h3 {
+    margin: 0;
+    color: $white-color;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.3rem;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 2px $shadow-color;
+    position: relative;
+    left: -150%;
+  }
+  & h3:nth-child(1) {
+    transition: left 0.75s ease;
+  }
+  & h3:nth-child(2) {
+    transition: left 0.75s ease 0.2s;
+  }
+  & h3:nth-child(3) {
+    transition: left 0.75s ease 0.4s;
+  }
+  & h3:nth-child(4) {
+    transition: left 0.75s ease 0.6s;
+  }
+  & h3:nth-child(5) {
+    transition: left 0.75s ease 0.8s;
+  }
+  &_ls h3 {
+    font-size: 1.2rem;
+    line-height: 1rem;
+  }
+  &_visible {
+    opacity: 1;
+  }
+  &_visible h3 {
+    left: 0;
+  }
+}
+
+.scoreCard {
+  background-color: $white-color;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 20%;
+  height: 100%;
+  color: $dark-text-color;
+  padding: 0.5rem;
+  box-shadow: 2px 2px 2px $shadow-color;
+}
+
+.scoreCardHeader {
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: $paper-dark-color;
+  letter-spacing: 0.1rem;
+}
+
+.score {
+  margin: auto;
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 2.75rem;
+  &GameOver {
+    animation: fadeIn 3s ease 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* BREAKPOINTS */
+
+@media only screen and (min-width: 321px) {
+  .titleScoreBox {
+    margin-top: 2rem;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  .titleScoreBox {
+    min-width: 60%;
+    height: 8rem;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .scoreCardHeader {
+    font-size: 1rem;
+  }
+
+  .score {
+    font-size: 3.5rem;
+  }
+
+  .title {
+    & h3 {
+      line-height: 1.65rem;
+      font-size: 2rem;
+    }
+    &_ls h3 {
+      font-size: 1.4rem;
+      line-height: 1.2rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .titleScoreBox {
+    min-width: 50%;
+  }
+}
