@@ -204,4 +204,14 @@ describe("Home", () => {
       expect(score).toHaveTextContent("-1");
     }
   });
+
+  it("returns to game start when user clicks play again button", () => {
+    render(<Home />);
+    let rockButton = screen.getByTestId("button-rock");
+    userEvent.click(rockButton);
+    const playAgainButton = screen.getByText("Play Again");
+    userEvent.click(playAgainButton);
+    rockButton = screen.getByTestId("button-rock");
+    expect(rockButton).toBeInTheDocument();
+  });
 });
