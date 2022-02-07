@@ -1,4 +1,4 @@
-import styles from "../styles/Header.module.scss"
+import styles from "../styles/Header.module.scss";
 import { useEffect, useState } from "react";
 
 export default function Header({ score, gameOver, addLizardSpock }) {
@@ -13,7 +13,13 @@ export default function Header({ score, gameOver, addLizardSpock }) {
 
   return (
     <div className={styles.titleScoreBox}>
-      <div className={styles.title + (addLizardSpock ? " " + styles.title_ls : "") + (visible ? " " + styles.title_visible : "")}>
+      <div
+        className={
+          styles.title +
+          (addLizardSpock ? " " + styles.title_ls : "") +
+          (visible ? " " + styles.title_visible : "")
+        }
+      >
         <h3>Rock</h3>
         <h3>Paper</h3>
         <h3>Scissors</h3>
@@ -22,7 +28,14 @@ export default function Header({ score, gameOver, addLizardSpock }) {
       </div>
       <div className={styles.scoreCard}>
         <h5 className={styles.scoreCardHeader}>Score</h5>
-        <h2 className={styles.score + (gameOver ? " " + styles.scoreGameOver : "")}>{score}</h2>
+        <h2
+          data-testid="score"
+          className={
+            styles.score + (gameOver ? " " + styles.scoreGameOver : "")
+          }
+        >
+          {score}
+        </h2>
       </div>
     </div>
   );
